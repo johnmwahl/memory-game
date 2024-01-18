@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CubCorner Games - Bible Memory Match</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="overlay"></div> <!-- Overlay for muting background -->
+    <button id="letsPlayButton">Let's Play</button>
+    <h1>Welcome to Bible Memory Match!</h1>
+    <div class="tries-counter">
+        Tries: <span id="tries">0</span>
+    </div>
+    <div class="settings">
+        <button id="toggleMusic">Toggle Music</button>
+        <button id="restartGame">Restart Game</button> <!-- Restart button -->
+    </div>
+    <div id="gameBoard" class="grid"></div>
+
+    <audio id="cardFlipSound" src="audio/card-flip.wav" preload="auto"></audio>
+    <audio id="matchSound" src="audio/match.wav" preload="auto"></audio>
+    <audio id="noMatchSound" src="audio/no-match.wav" preload="auto"></audio>
+    <audio id="backgroundMusic" src="audio/background-music.wav" preload="auto" loop></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

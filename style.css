@@ -1,0 +1,189 @@
+body {
+    background-image: url('images/game-background-mobile.png'); /* Default to mobile background */
+    background-color: #1a1a1a; /* Fallback background color */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: bottom center; /* Center the image */
+    background-attachment: fixed; /* Fixed background (doesn't scroll with the page) */
+    color: #f1f1f1; /* Text color */
+    font-family: Arial, sans-serif; /* Font family */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* For tablets and larger devices */
+@media (min-width: 768px) {
+    body {
+        background-image: url('images/game-background-tablet.png');
+    }
+}
+
+/* For desktops and larger devices */
+@media (min-width: 1024px) {
+    body {
+        background-image: url('images/game-background-desktop.png');
+    }
+}
+
+
+h1 {
+    font-family: 'Comic Sans MS', cursive; /* Fun and widely available font */
+    text-align: center;
+    color: white; /* Set color to white */
+    margin-top: 10px;
+    font-size: 40px; /* Larger font size */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    animation: bounce 1s ease infinite; /* Bouncy animation */
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates a 4x4 grid */
+    gap: 6px; /* Spacing between cards */
+    max-width: 830px; /* Maximum width of the grid */
+    margin: 10px auto; /* Center the grid horizontally and add vertical spacing */
+    padding: 10px;
+    border-radius: 10px; /* Optional: Rounded corners for the game area */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9); /* Optional: Shadow for the game area */
+}
+
+.card {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 2px; /* Add some space around cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow effect */
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(20deg); /* Slight rotation for 3D hover effect */
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+.card-front {
+    background-image: url('images/card-back.png'); /* Card back image */
+    background-size: cover;
+    background-position: center;
+}
+
+.card-back {
+    background-color: white; /* Set background color to white */
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+.tries-counter {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #4b4b4b;
+    background-color: #f1f1f1; /* Light background for contrast */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.settings {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #4b4b4b; /* Darker background for a sleek look */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column; /* Stack the buttons vertically */
+    align-items: center; /* Center-align the buttons */
+}
+
+.settings button {
+    background: none;
+    border: none;
+    color: #f1f1f1;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin: 5px 0; /* Add some space between the buttons */
+}
+
+.settings button:hover {
+    text-decoration: underline;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7); /* White overlay with opacity */
+    z-index: 10; /* Ensure it's above the game but below the button */
+}
+
+#letsPlayButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #a44caf;
+    color: white;
+    cursor: pointer;
+    z-index: 20; /* High z-index to ensure it's on top */
+    animation: pulse 2s infinite;
+}
+
+
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(1.05);
+        box-shadow: 0 0 10px 20px rgba(0, 0, 0, 0);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+.grid {
+    pointer-events: none; /* Initially disable interactions */
