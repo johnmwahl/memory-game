@@ -26,3 +26,9 @@ The Bible Memory Card Game is a classic card-matching game with a twist. The gam
 - HTML
 - CSS
 - JavaScript
+
+- ##Screenshots
+
+- ![Title screen](https://raw.githubusercontent.com/johnmwahl/memory-game/main/Screenshots/startup-page.png)
+- 
+- ![Game screen](https://raw.githubusercontent.com/johnmwahl/memory-game/main/Screenshots/game.png)
