@@ -1,4 +1,5 @@
 # The Bible Memory Card Game
+Play the game: https://memory-game-ochre-six.vercel.app/
 
 Welcome to the The Bible Memory Card Game, an interactive and engaging way for believers to keep their minds sharp and refreshed. This game is designed to provide not only a fun challenge but also an opportunity to connect with themes that are meaningful to the community of believers.
 
